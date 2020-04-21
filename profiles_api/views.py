@@ -4,6 +4,8 @@ from rest_framework.response import Response
 from rest_framework import status                               # HTTP statues
 from rest_framework import viewsets
 from rest_framework.authentication import TokenAuthentication
+from rest_framework import filters
+
 
 # imports fro our application
 from profiles_api import serializers
@@ -102,5 +104,9 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     """Handle creating and updating profiles"""
     serializer_class = serializers.UserProfileSerializer
     queryset = models.UserProfile.objects.all()
+    # Add Token and password to allow user to only change themselves
     authentication_classes = (TokenAuthentication, )
     permission_classes = (permissions.UpdateOwnProfile, )
+    # to allow filtering by name and email
+    filter_backends = (filters.SearchFilter, )
+    search_fields = ('name', 'email', )
