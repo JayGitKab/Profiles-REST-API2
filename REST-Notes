@@ -1,0 +1,48 @@
+JayGitKab
+
+passphrase   JBK
+
+Bash
+goto c:\Kabath\REST\Courses\Profiles-REST-API
+cd c:
+cd Kabath/REST/Courses/Profiles-REST-API
+
+vagrant init ubuntu/bionic64
+
+vagrant up
+
+vagrant ssh
+
+cd /vagrant
+
+python -m venv ~/env
+source ~/env/bin/activate
+	deactivate
+	
+python manage.py runserver 0.0.0.0:8000
+
+jango
+
+python manag.pt makemigrations  == Turns new classes into database tables
+
+https://www.django-rest-framework.org
+
+
+superuser name jay1.kabath@gmail.com Jay/Jay123
+
+APIView
+	get, post, patch, delete
+	
+ViewSet(APIView)
+	list, create
+	
+API Feed
+
+
+Add class to models.py  (model -> db table)
+New modeles must be registrered in Admin.py
+Add serializer for class to serializer.py
+Add (viewset) class to views.py
+Add class to urls.py
+
+futan
